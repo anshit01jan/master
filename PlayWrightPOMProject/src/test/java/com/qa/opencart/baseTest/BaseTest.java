@@ -26,7 +26,7 @@ public class BaseTest {
     utility uc;
     
     @Parameters("browser")
-    @BeforeMethod
+    @BeforeTest
     public void setUp(String browser){
         pf = new PlayWrightFactory();
         cr = new ConfigReader();
@@ -38,7 +38,7 @@ public class BaseTest {
         uc = new utility(page);
     }
     
-    @AfterMethod
+    @AfterTest
     public void tearDown(){
         pf.closeBrowser();
     }
