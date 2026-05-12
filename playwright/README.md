@@ -7,3 +7,5 @@ Run locally:
 1. npm install
 2. npx playwright install
 3. npm test
+
+Notes: Tests rely on stable selectors; see `playwright/pages` for locator usage.
