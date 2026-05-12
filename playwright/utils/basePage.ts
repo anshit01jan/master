@@ -1,3 +1,4 @@
+// Small PR header: ensure this file appears in PR file list
 import { Page, Locator, expect } from '@playwright/test';
 
 export default class BasePage {
