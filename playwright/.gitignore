@@ -3,3 +3,5 @@ dist/
 playwright-report/
 debug.log
 *.local
+
+# PR: ensure .gitignore included
