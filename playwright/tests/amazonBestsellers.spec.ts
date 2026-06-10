@@ -17,7 +17,7 @@ test.describe('Amazon Bestsellers navigation', () => {
     await expect(page.getByText('Bestsellers in Garden & Outdoors', { exact: true })).toBeVisible();
 
     // Click Electronics under Any Department
-    await page.goto('https://www.amazon.in/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0');
+    await page.locator('a[href="/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0"]').click();
     await page.waitForLoadState('domcontentloaded');
 
     await expect(page.getByText('Bestsellers in Electronics', { exact: true })).toBeVisible();
