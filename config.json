@@ -1,0 +1,19 @@
+{
+  "deployment_url": "https://next.elitea.ai",
+  "auth_token": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZGUwMTQ1YTUtNTE5Ni00OThhLTlkNWUtNzM5ZjRiODc3YWE1IiwiZXhwaXJlcyI6IjIwMjYtMTItMDZUMTk6MTAifQ.jmBpx90eHoCF5E3IBdoevDjYQt8BJ2UgXxji2hN1omQ_Xf7x8_-uhQZzXWbtAj_eHGo3QKOOvpWix6FSHNNMtw",
+  "host": "0.0.0.0",
+  "port": 8000,
+  "servers": {
+    "Playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "stateful": true
+    }
+  },
+  "timeout": 30,
+  "ssl_verify": false,
+  "project_id": 15698
+}
