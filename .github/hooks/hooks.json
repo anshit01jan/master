@@ -1,0 +1,105 @@
+{
+  "version": "1.0",
+  "description": "Security guardrails for test automation framework - pre and post tool use validation, refreshed for PR scope synchronization",
+  "audit_log": "./hooks/audit.log",
+  "hooks": {
+    "pre_tool_use": {
+      "enabled": true,
+      "script": "./hooks/script.sh",
+      "function": "pre_tool_validation",
+      "timeout_ms": 5000,
+      "checks": [
+        {
+          "name": "sensitive_data_check",
+          "description": "Prevent exposure of credentials, tokens, and secrets",
+          "enabled": true,
+          "patterns": [
+            "password",
+            "apiKey",
+            "token",
+            "secret",
+            "credentials",
+            "privateKey"
+          ]
+        },
+        {
+          "name": "input_validation",
+          "description": "Validate tool inputs for malicious patterns",
+          "enabled": true,
+          "blocked_patterns": [
+            "eval\\(",
+            "exec\\(",
+            "<script>",
+            "DROP TABLE",
+            "'; DELETE FROM",
+            "../../../"
+          ]
+        }
+      ]
+    },
+    "post_tool_use": {
+      "enabled": true,
+      "script": "./hooks/script.sh",
+      "function": "post_tool_validation",
+      "timeout_ms": 5000,
+      "checks": [
+        {
+          "name": "output_sanitization",
+          "description": "Remove sensitive data from tool outputs",
+          "enabled": true,
+          "redact_patterns": [
+            {
+              "pattern": "(password|pwd)\\s*=\\s*[\"']?[^\\s\"']+",
+              "replacement": "$1=***REDACTED***"
+            },
+            {
+              "pattern": "(api[_-]?key|apikey)\\s*[:=]\\s*[\"']?[A-Za-z0-9_\\-]+",
+              "replacement": "$1=***REDACTED***"
+            },
+            {
+              "pattern": "(token|bearer)\\s*[:=]\\s*[\"']?[A-Za-z0-9_\\-\\.]+",
+              "replacement": "$1=***REDACTED***"
+            },
+            {
+              "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
+              "replacement": "***EMAIL_REDACTED***"
+            }
+          ]
+        },
+        {
+          "name": "resource_cleanup",
+          "description": "Ensure temporary files and sensitive data are cleaned up",
+          "enabled": true,
+          "cleanup_patterns": [
+            "temp_*.tmp",
+            "*.credentials",
+            ".env.local",
+            "sensitive_*.log"
+          ]
+        },
+        {
+          "name": "security_violations_check",
+          "description": "Detect and block security policy violations",
+          "enabled": true,
+          "violations": [
+            {
+              "type": "data_exfiltration",
+              "pattern": "large_data_transfer_to_untrusted_domain",
+              "action": "block"
+            },
+            {
+              "type": "privilege_escalation",
+              "pattern": "sudo|admin|root|elevated",
+              "action": "alert"
+            },
+            {
+              "type": "code_injection",
+              "pattern": "eval|exec|system|Runtime\\.getRuntime",
+              "action": "alert"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
