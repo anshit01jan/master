@@ -40,5 +40,5 @@ coverage/
 instance/
 *.db
 
-# GitHub workflows and agent outputs should remain tracked only if intended
-# Keep .github/ and agent-output/ unless you want them excluded explicitly
+# Claude Code config and agent outputs should remain tracked only if intended
+# Keep .claude/ and agent-output/ unless you want them excluded explicitly

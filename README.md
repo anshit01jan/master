@@ -32,19 +32,22 @@ Root layout:
 - `src/test/java/` - Cucumber runner, hooks, and step definitions
 - `src/test/resources/` - feature files, test configuration, env properties, and Log4j config
 - `target/` - Maven build output, reports, and generated artifacts
-- `.github/` - repository automation metadata, workflows, and custom skill definitions
+- `.claude/` - Claude Code agent/skill/command definitions and security hooks for the SDLC workflow
+- `CLAUDE.md` - project-wide instructions Claude Code loads automatically
+- `.mcp.json` - MCP server definitions (Jira/Confluence, GitHub, TestRail, Playwright)
 - `agent-output/` - generated documentation, requirement artifacts, execution summaries, and automation outputs
-- `repo-clean/` - separate copy of a similar project layout for cleanup or reference
 
-## `.github/` Directory
+## `.claude/` Directory
 
-The `.github/` folder contains repository-level automation and metadata used by GitHub workflows and agent tooling:
+The `.claude/` folder contains the Claude Code agent tooling that drives the SDLC workflow:
 
-- Custom skill definitions under `.github/skills/` used for automation guidance and workflow orchestration
-- Workflow files if present, which define CI/test automation steps
-- Issue templates or repository settings files when configured
+- `.claude/agents/` - subagent definitions for each workflow phase (read-user-story, create-architecture, design-reviewer, implementation-plan, create-implementation, code-reviewer, test-case-creation, automation-test-cases, pull-request-creator)
+- `.claude/skills/` - the corresponding skill instructions each subagent invokes
+- `.claude/commands/run-sdlc-workflow.md` - the `/run-sdlc-workflow` slash command that orchestrates all phases end-to-end
+- `.claude/settings.json` and `.claude/hooks/` - `PreToolUse`/`PostToolUse` security guardrail hooks (sensitive data and malicious input checks, audit logging)
+- `.claude/codereview-checklist.md` - the mandatory checklist used by the code-reviewer skill
 
-> Note: This repository includes `.github/skills/automation-test-cases/SKILL.md` and related definition files used by the automation framework and agent workflows.
+> Note: This repository includes `.claude/skills/automation-test-cases/SKILL.md` and related definition files used by the automation framework and agent workflows.
 
 ## `agent-output/` Directory
 
@@ -176,7 +179,7 @@ After execution, review:
 
 ## Useful Files
 
-- `.readme` - this file
+- `README.md` - this file
 - `pom.xml` - Maven automation configuration
 - `testng.xml` - TestNG suite definition
 - `run.py` - Flask app entrypoint
