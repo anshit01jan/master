@@ -1,0 +1,44 @@
+# Maven / Java
+target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.mvn/
+.settings/
+.project
+.classpath
+.idea/
+*.ipr
+*.iws
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+env/
+.venv/
+.python-version
+
+# IDE files
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Test artifacts
+target/
+reports/
+coverage/
+
+# Flask / local app
+instance/
+*.db
+
+# Claude Code config and agent outputs should remain tracked only if intended
+# Keep .claude/ and agent-output/ unless you want them excluded explicitly
