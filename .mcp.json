@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "mcp-atlassian": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcp-atlassian",
+        "mcp-atlassian"
+      ],
+      "env": {
+        "JIRA_URL": "https://anshit01jan.atlassian.net",
+        "JIRA_USERNAME": "anshit01jan@gmail.com",
+        "JIRA_API_TOKEN": "ATATT3xFfGF0iLKyvcskgw143el-56lgeijkYRAkPLfrRgj88-Op179XGiLep24FjVxZGLFFSPVi73FzbdfTh78yCL_2WpQ2VRgxLAueRhyCurTdqkOaFvzkGGfSvQ0IshJ_mvDvTHSG0FO-9ovyIOSOyeTbju9vxNp0OR3hLLxCbfpqmi_mTMU=4C021020"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}

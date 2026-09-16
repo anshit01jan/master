@@ -1,0 +1,21 @@
+- generic [ref=f1e5]:
+  - generic [ref=f1e6]:
+    - paragraph [ref=f1e7]: Secure Access
+    - heading "Sign in with your registered username." [level=1] [ref=f1e8]
+    - paragraph [ref=f1e9]: This local implementation seeds one demo account so you can validate the full login and recovery flow.
+    - generic [ref=f1e10]:
+      - strong [ref=f1e11]: Demo user
+      - generic [ref=f1e12]: "Username: demo.user"
+      - generic [ref=f1e13]: "Password: DemoPass123!"
+  - generic [ref=f1e14]:
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: Username
+      - textbox "Username" [ref=f1e17]
+    - paragraph [ref=f1e18]
+    - generic [ref=f1e19]:
+      - generic [ref=f1e20]: Password
+      - textbox "Password" [ref=f1e21]
+    - paragraph [ref=f1e22]
+    - button "Sign in" [ref=f1e23] [cursor=pointer]
+    - link "Forgot your password?" [ref=f1e25] [cursor=pointer]:
+      - /url: /forgot-password

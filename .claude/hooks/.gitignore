@@ -1,0 +1,3 @@
+# Generated audit artifacts are intentionally excluded from PR diffs.
+audit.log
+violations.log

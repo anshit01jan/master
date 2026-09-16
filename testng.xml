@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SCRUM50 Automation Suite" verbose="1" parallel="false" preserve-order="true" thread-count="1">
+  <test name="Cucumber UI Suite">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="runner.TestRunner"/>
+    </classes>
+  </test>
+</suite>
