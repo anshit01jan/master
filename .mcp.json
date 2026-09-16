@@ -1,12 +1,5 @@
 {
   "mcpServers": {
-    "Elitea-mcp-server": {
-      "type": "http",
-      "url": "${ELITEA_MCP_URL}",
-      "headers": {
-        "Authorization": "Bearer ${ELITEA_MCP_TOKEN}"
-      }
-    },
     "github": {
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/"
@@ -19,23 +12,9 @@
         "mcp-atlassian"
       ],
       "env": {
-        "JIRA_URL": "${JIRA_URL}",
-        "JIRA_USERNAME": "${JIRA_USERNAME}",
-        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
-        "CONFLUENCE_URL": "${CONFLUENCE_URL}",
-        "CONFLUENCE_USERNAME": "${CONFLUENCE_USERNAME}",
-        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}"
-      }
-    },
-    "testrail": {
-      "command": "npx",
-      "args": [
-        "@bun913/mcp-testrail@latest"
-      ],
-      "env": {
-        "TESTRAIL_URL": "${TESTRAIL_URL}",
-        "TESTRAIL_USERNAME": "${TESTRAIL_USERNAME}",
-        "TESTRAIL_API_KEY": "${TESTRAIL_API_KEY}"
+        "JIRA_URL": "https://anshit01jan.atlassian.net",
+        "JIRA_USERNAME": "anshit01jan@gmail.com",
+        "JIRA_API_TOKEN": "ATATT3xFfGF0iLKyvcskgw143el-56lgeijkYRAkPLfrRgj88-Op179XGiLep24FjVxZGLFFSPVi73FzbdfTh78yCL_2WpQ2VRgxLAueRhyCurTdqkOaFvzkGGfSvQ0IshJ_mvDvTHSG0FO-9ovyIOSOyeTbju9vxNp0OR3hLLxCbfpqmi_mTMU=4C021020"
       }
     },
     "playwright": {

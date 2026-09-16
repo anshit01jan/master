@@ -1,7 +1,7 @@
 ---
 name: create-architecture
 description: "Use when creating an architecture recommendation, architecture.md, component diagram, technology choices, or data flow from agent-output/requirements.md."
-allowedTools: [read, edit, grep, glob]
+allowedTools: [read, edit]
 model: haiku
 ---
 

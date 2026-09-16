@@ -1,7 +1,7 @@
 ---
 name: automation-test-cases
 description: "Use when automating all test cases from agent-output/test_cases.md into a Java + Cucumber + Selenium + Maven + TestNG hybrid framework, ensuring complete step-definition coverage for smoke and regression tagged scenarios with hooks under src/test/java, executing via testng.xml, and publishing automation_test_results.md with pass/fail/skip metrics and Extent report URL."
-allowedTools: [read, edit, grep, glob, bash, taskCreate, taskUpdate]
+allowedTools: [read, edit]
 model: sonnet
 ---
 

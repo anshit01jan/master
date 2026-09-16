@@ -1,7 +1,7 @@
 ---
 name: pull-request-creator
 description: "Use when creating a Pull Request. This agent invokes the pull-request-creation skill and delegates the full PR workflow to it."
-allowedTools: [read, edit, grep, glob, bash, github]
+allowedTools: [read, edit, grep, github]
 model: haiku
 ---
 

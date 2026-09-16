@@ -1,7 +1,7 @@
 ---
 name: design-reviewer
 description: "Use when conducting a structured design review of architecture.md before writing production code, identifying risks and gaps, documenting findings in design-review.md, and updating architecture.md if issues are found."
-allowedTools: [read, edit, grep, glob]
+allowedTools: [read, edit]
 model: haiku
 ---
 

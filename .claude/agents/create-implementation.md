@@ -1,7 +1,7 @@
 ---
 name: create-implementation
 description: "Use when implementing the application from impl.md and requirements.md, creating a localhost web app with the specified tech stack, and writing a short execution summary to agent-output/create-impl.md."
-allowedTools: [read, edit, grep, glob]
+allowedTools: [read, edit, grep]
 model: haiku
 ---
 

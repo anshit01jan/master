@@ -25,7 +25,7 @@ The project must follow a complete high-level SDLC workflow:
 8. Automation execution and reporting.
 9. Pull request creation for framework changes.
 
-Run the full workflow end-to-end with the `/run-sdlc-workflow` slash command, which executes each phase in strict order via the corresponding subagent under `.claude/agents/`.
+Run the full workflow end-to-end with the `/run-sdlc-workflow` slash command, which delegates to `.claude/agents/orchestrator-agent.md`; that agent loads the orchestrator skill and executes each phase in strict order via the corresponding subagent under `.claude/agents/`.
 
 ## Execution Hooks
 - Security guardrails (sensitive data check, malicious input pattern checks, and audit logging) are enforced as Claude Code hooks defined in `.claude/settings.json`, backed by `.claude/hooks/security-guardrails.sh`.

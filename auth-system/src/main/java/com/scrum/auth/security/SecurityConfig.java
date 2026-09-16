@@ -60,9 +60,4 @@ public class SecurityConfig {
 
         return http.build();
     }
-
-    @Bean
-    public PasswordHasher createHasher() {
-        return new PasswordHasher(12);
-    }
 }

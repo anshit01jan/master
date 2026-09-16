@@ -1,7 +1,7 @@
 ---
 name: test-case-creation
 description: "Use when generating comprehensive QA test cases from agent-output/requirements.md and saving the output to agent-output/test_cases.md."
-allowedTools: [read, edit, grep, glob]
+allowedTools: [read, edit]
 model: haiku
 ---
 

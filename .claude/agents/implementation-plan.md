@@ -1,7 +1,7 @@
 ---
 name: implementation-plan
 description: "Use when creating a prioritized, dependency-ordered implementation plan from architecture.md and design-review.md, identifying blocked tasks, and documenting the plan in impl-plan.md."
-allowedTools: [read, edit, grep, glob]
+allowedTools: [read, edit]
 model: haiku
 ---
 
